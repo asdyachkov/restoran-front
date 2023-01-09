@@ -5,8 +5,8 @@ import RentATable from '../components/RentATable.vue'
 
 const routes = [
   {path: '/', name: 'MainPage', component: MainPage},
-  {path: 'menu', name: 'RestoranMenu', component: RestoranMenu},
-  {path: 'rent_a_table', name: 'RentATable', component: RentATable},
+  {path: '/menu', name: 'RestoranMenu', component: RestoranMenu},
+  {path: '/rent_a_table', name: 'RentATable', component: RentATable},
 ]
 
 const router = createRouter({
