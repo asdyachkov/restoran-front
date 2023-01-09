@@ -23,6 +23,6 @@ export default {
 }
 </script>
 
-<style src="@/assets/css/MainPage.css">
+<style scoped src="@/assets/css/RentATable.css">
 
 </style>

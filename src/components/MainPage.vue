@@ -162,11 +162,10 @@ export default {
       version: '2.1'
     }
     await loadYmap(settings);
-    console.log("sjbvsjbnvkjnsdvjnsvjns")
   },
 }
 </script>
 
-<style src="@/assets/css/MainPage.css">
+<style scoped src="@/assets/css/MainPage.css">
 
 </style>

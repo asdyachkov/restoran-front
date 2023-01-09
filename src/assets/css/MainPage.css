@@ -9,6 +9,7 @@ body{
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../public/about-background.jpg") no-repeat repeat center center;
     background-size: 100%;
 }
+
 .main-h1{
     font-size: 60px;
     font-weight: normal;
