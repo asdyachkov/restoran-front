@@ -164,7 +164,7 @@ a {
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-height: 300px;
+    max-width: 50%;
 }
 .two-cols .col-item {
     margin-right: 4%;
@@ -283,6 +283,90 @@ a {
     font-weight: 400;
     font-size: 14px;
     color: darkgray;
+}
+.form-style{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    margin-left: 10%;
+    width: 100%;
+    padding: 3% 7% 3% 7%;
+    height: 100%;
+}
+.form-style textarea{
+    height: 100px;
+    display: flex;
+    min-height: 42px;
+    padding-left: 5%;
+    padding-right: 3%;
+    padding-top: 2%;
+    font-weight: lighter;
+    max-height: 300px;
+}
+.input-errors{
+    margin-top: 10px;
+    color: red;
+    letter-spacing: 0.6px;
+}
+.form-style h5{
+    margin-top: 3%;
+    font-weight: lighter;
+}
+.form-style .rent-button{
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    padding: 0;
+}
+.text-input{
+    border-radius: 10px;
+    width: 85%;
+    height: 42px;
+    border: none;
+    padding-left: 5%;
+    padding-right: 3%;
+    font-weight: lighter;
+}
+
+
+.carousel {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 10%;
+}
+.carousel * {
+    box-sizing: border-box;
+}
+
+.carousel__track {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.carousel__viewport {
+    overflow: hidden;
+}
+
+.carousel__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.carousel__pagination-item{
+    color: white !important;
+}
+.reviews{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 100%;
+    padding: 3% 7% 3% 7%;
+    height: 100%;
 }
 
 

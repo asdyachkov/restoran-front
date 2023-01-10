@@ -9,7 +9,7 @@
     <div class="v-table-body">
       <div class="v-table-row" v-for="item in paginatedFood" :key="item.id">
         <div class="my-row row_category">{{ item.category }}</div>
-        <div class="my-row row_name">{{ item.name }}</div>
+        <div class="my-row row_name" @click="dishClick(item.id)" style="cursor: pointer">{{ item.name }}</div>
         <div class="my-row row_mass">{{ item.mass }}</div>
         <div class="my-row row_cost">{{ item.cost }}</div>
       </div>
@@ -71,6 +71,9 @@ export default {
     sortByCost(){
       //eslint-disable-next-line
       this.food_info.sort((a, b) => a.cost - b.cost)
+    },
+    dishClick(id){
+      this.$router.push({name: 'dish', query: {'dishid': id}})
     }
   }
 }

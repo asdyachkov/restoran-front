@@ -110,6 +110,46 @@
           </div>
         </div>
 
+        <div class="two-cols">
+          <div class="col-item">
+            <h2>Наши отзывы</h2>
+
+            <div class="reviews">
+              <carousel class="carousel" :autoplay="2000" :wrap-around="true">
+                <slide v-for="slide in REVIEW" :key="slide.id">
+                  <div>
+                    <h2>{{ slide.name }}</h2>
+                    <h5>{{ slide.review_message }}</h5>
+                  </div>
+                </slide>
+              </carousel>
+            </div>
+
+
+          </div>
+          <div class="col-item">
+            <form method="post" class="form-style">
+
+              <h5>Введите Ваше имя*</h5>
+              <input type="text" class="text-input" placeholder="Например: Иван/Ольга" v-model="v$.form.visitorName.$model">
+              <div class="input-errors" v-for="(error, index) of v$.form.visitorName.$errors" :key="index">
+                <div class="error-msg">{{ error.$message }}</div>
+              </div>
+
+              <h5>Расскажите о Вашем посещении*</h5>
+              <textarea type="text" class="text-input" placeholder="Что порадовало, а над чем нам стоит работать?" v-model="v$.form.visitorMessage.$model"></textarea>
+              <div class="input-errors" v-for="(error, index) of v$.form.visitorMessage.$errors" :key="index">
+                <div class="error-msg">{{ error.$message }}</div>
+              </div>
+
+              <button class="btn rent-button" type="submit">
+                <span>Добавить отзыв</span>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
       </div>
 
       <div class="card">
@@ -137,21 +177,68 @@
 
 <script>
 import MyDefault from "@/components/layouts/MyDefault";
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength } from '@vuelidate/validators'
 import { yandexMap, ymapMarker, loadYmap } from 'vue-yandex-maps'
+import {mapActions, mapGetters} from 'vuex'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+
+export function validName(name) {
+  let validNamePattern = new RegExp("[A-Za-zА-Яа-яЁё]");
+  if (validNamePattern.test(name)){
+    return true;
+  }
+  return false;
+}
 
 export default {
-  components: {MyDefault, yandexMap, ymapMarker},
-
+  components: {MyDefault, yandexMap, ymapMarker, Carousel, Slide},
+  setup () {
+    return {
+      v$: useVuelidate()
+    }
+  },
   data() {
     return {
+      form: {
+        visitorName: '',
+        visitorMessage: '',
+      },
       coords: [
         55.714044,
         37.670142,
       ],
     }
   },
+  validations() {
+    return {
+      form: {
+        visitorName: {
+          required,
+          min: minLength(5),
+          name_validation: {
+            required,
+            $validator: validName,
+            $message: 'The name can contain only letters of the Russian and Latin alphabet'
+          }
+        },
+        visitorMessage: {
+          required,
+          min: minLength(20),
+        },
+      }
+    }
+  },
   methods: {
-
+    ...mapActions([
+      'GET_REVIEW_FROM_API'
+    ])
+  },
+  computed:{
+    ...mapGetters([
+      'REVIEW'
+    ])
   },
   async mounted() {
     const settings = {
@@ -160,7 +247,8 @@ export default {
       coordorder: 'latlong',
       enterprise: false,
       version: '2.1'
-    }
+    };
+    this.GET_REVIEW_FROM_API();
     await loadYmap(settings);
   },
 }
