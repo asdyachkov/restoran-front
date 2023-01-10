@@ -174,3 +174,8 @@ body{
     padding-right: 3%;
     font-weight: lighter;
 }
+.input-errors{
+    margin-top: 10px;
+    color: red;
+    letter-spacing: 0.6px;
+}
