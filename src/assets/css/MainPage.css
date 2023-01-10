@@ -182,11 +182,9 @@ a {
     width: 300px;
     border: 2px #ab8e6c solid;
     border-radius: 10px;
-
-}
-.rent-button {
     transition: all 0.3s;
     position: relative;
+
 }
 .rent-button span {
     transition: all 0.3s;
@@ -260,8 +258,8 @@ a {
     position: absolute !important;
     background-color: rgba(0, 0, 0, 0.8);
     left: 10%;
-    width: 30%;
-    height: 80%;
+    width: 25%;
+    height: 82%;
     top: 10%;
 }
 .address-block h2{
@@ -286,4 +284,5 @@ a {
     font-size: 14px;
     color: darkgray;
 }
+
 
