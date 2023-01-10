@@ -35,7 +35,6 @@ export default {
       let result = {}
       let vm = this
       this.FOOD.map(function (item){
-        console.log(item.id, vm.$route.query.dishid)
         if (item.id.toString() === vm.$route.query.dishid){
           result = item
           return result

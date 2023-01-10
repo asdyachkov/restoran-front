@@ -15,7 +15,7 @@
             </a>
           </div>
         <div class="row">
-          <form method="post" class="form-style">
+          <form class="form-style" @submit.prevent.stop="submit">
             <h5>Введите Ваше имя*</h5>
             <input type="text" class="text-input" placeholder="Например: Иван/Ольга" v-model="v$.form.visitorName.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorName.$errors" :key="index">
@@ -45,7 +45,7 @@
               <div class="error-msg">{{ error.$message }}</div>
             </div>
 
-            <button class="btn rent-button" type="submit">
+            <button class="btn rent-button">
               <span>Забронировать</span>
             </button>
 
@@ -62,6 +62,7 @@
 import MyDefault from "@/components/layouts/MyDefault";
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
+import axios from "axios";
 
 export function validPhone(phone) {
   let validNamePattern = new RegExp("\\+7\\s?[\\(]{0,1}9[0-9]{2}[\\)]{0,1}\\s?\\d{3}[-]{0,1}\\d{2}[-]{0,1}\\d{2}");
@@ -121,6 +122,20 @@ export default {
     }
   },
   methods: {
+    submit(){
+      if (!this.v$.form.$errors.length){
+        axios.post('api/registred', this.form)
+            .then((result) => {
+              console.log(result)
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+            .finally(() => {
+              console.log('Success')
+            })
+      }
+    }
 
   },
 

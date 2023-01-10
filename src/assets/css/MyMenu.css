@@ -108,3 +108,9 @@ body{
     color: #ab8e6c;
     border-color: #ab8e6c;
 }
+.refresh-button{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 20px;
+}

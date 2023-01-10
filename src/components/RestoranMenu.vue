@@ -1,13 +1,12 @@
 <template>
   <my-default>
     <template v-slot:content>
-      <h1 class="menu-h1">Меню Мята</h1>
+      <h1 class="menu-h1" >Меню Мята <button @click="this.GET_FOOD_FROM_API()" class="refresh-button">&#8635;</button></h1>
       <button onclick="window.print()" class="print-button">Распечатать меню</button>
 
       <v-table
       :food_info="FOOD"
       />
-
     </template>
 
   </my-default>

@@ -8,6 +8,7 @@ const store = new Vuex.Store({
     },
     actions:{
         GET_FOOD_FROM_API({commit}){
+            console.log('updated!')
             return axios('http://localhost:3000/food', {
                 method: 'GET'
             })
