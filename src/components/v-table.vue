@@ -1,27 +1,30 @@
 <template>
-  <div class="v-table container">
-    <div class="v-table_header">
-      <p @click="sortByCategory">Категория &#8597; </p>
-      <p @click="sortByName">Название &#8597; </p>
-      <p @click="sortByWeight">Масса &#8597; </p>
-      <p @click="sortByCost">Стоимость &#8597; </p>
-    </div>
-    <div class="v-table-body">
-      <div class="v-table-row" v-for="item in paginatedFood" :key="item.id">
-        <div class="my-row row_category">{{ item.category }}</div>
-        <div class="my-row row_name" @click="dishClick(item.id)" style="cursor: pointer">{{ item.name }}</div>
-        <div class="my-row row_mass">{{ item.mass }}</div>
-        <div class="my-row row_cost">{{ item.cost }}</div>
+  <div class="container">
+    <div class="v-table">
+      <div class="v-table_header">
+        <p @click="sortByCategory">Категория &#8597; </p>
+        <p @click="sortByName">Название &#8597; </p>
+        <p @click="sortByWeight">Масса &#8597; </p>
+        <p @click="sortByCost">Стоимость &#8597; </p>
       </div>
+      <div class="v-table-body">
+        <div class="v-table-row" v-for="item in paginatedFood" :key="item.id">
+          <div class="my-row row_category">{{ item.category }}</div>
+          <div class="my-row row_name" @click="dishClick(item.id)" style="cursor: pointer">{{ item.name }}</div>
+          <div class="my-row row_mass">{{ item.mass }}</div>
+          <div class="my-row row_cost">{{ item.cost }}</div>
+        </div>
+      </div>
+
+      <div class="v-table_pagination">
+        <div class="page" v-for="page in pages" :key="page" @click="pageClick(page)" :class="{'page_selected': page === pageNumber}">
+          {{page}}
+        </div>
+      </div>
+
     </div>
 
-    <div class="v-table_pagination">
-      <div class="page" v-for="page in pages" :key="page" @click="pageClick(page)" :class="{'page_selected': page === pageNumber}">
-        {{page}}
-      </div>
     </div>
-
-  </div>
 </template>
 
 <script>
@@ -85,6 +88,8 @@ export default {
 }
 .v-table{
   margin: 20px auto;
+  color: white;
+  background: none;
 }
 .v-table p{
   flex-basis: 25%;

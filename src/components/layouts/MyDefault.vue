@@ -10,6 +10,7 @@
               <li class="nav-item"><router-link to="/menu" class="nav-link">Menu</router-link></li>
               <li class="nav-item"><router-link to="/rent_a_table" class="nav-link">Rent a table</router-link></li>
             </ul>
+
             <div style="margin-left: auto; display: flex; align-items: center; justify-content: center">
 
               <form role="search">
@@ -42,13 +43,11 @@
 
 
 
-    <footer>
+    <v-footer border style="background: none; color: white">
       <div class="container">
-        <div class="border-top">
-          <p class="text-center">Copyright by Stepan Diachkov 211-321</p>
-        </div>
+        <p class="text-center">Copyright by Stepan Diachkov 211-321</p>
       </div>
-    </footer>
+    </v-footer>
   </body>
 </template>
 

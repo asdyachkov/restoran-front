@@ -2,12 +2,13 @@
   <my-default>
     <template v-slot:content>
       <div class="dish_info container">
+        <button onclick="window.print()" class="print-button">Распечатать информацию</button>
         <img :src="dish.image_link" alt="" class="dish_image">
         <h1>{{dish.name}}</h1>
-        <a href="/menu">
-          <div class="btn rent-button">
-            <span>Назад к меню</span>
-          </div>
+        <a href="/menu" style="text-decoration: none">
+          <v-btn stacked variant="outlined" color="#ab8e6c">
+            Button
+          </v-btn>
         </a>
       </div>
     </template>

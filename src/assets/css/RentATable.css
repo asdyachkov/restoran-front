@@ -14,7 +14,7 @@ output {
     background: #ab8e6c;
     padding: 5px 16px;
     border-radius: 3px;
-    color: black;
+    color: white;
 }
 
 input[type="range"] {
@@ -25,6 +25,7 @@ input[type="range"] {
     border-radius: 5px;
     background-size: 70% 100%;
     background-repeat: no-repeat;
+    background-color: white;
 }
 
 /* Input Thumb */
@@ -147,6 +148,7 @@ body{
     max-width: 80%;
 }
 .form-style{
+    color: white;
     background-color: rgba(0, 0, 0, 0.4);
     margin-bottom: -20%;
     margin-top: -15%;
@@ -169,10 +171,11 @@ body{
     border-radius: 10px;
     width: 85%;
     height: 42px;
-    border: none;
+    border: white 1px solid;
     padding-left: 5%;
     padding-right: 3%;
     font-weight: lighter;
+    color: white;
 }
 .input-errors{
     margin-top: 10px;

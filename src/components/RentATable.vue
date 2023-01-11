@@ -19,7 +19,13 @@
             <h5>Введите Ваше имя*</h5>
             <input type="text" class="text-input" placeholder="Например: Иван/Ольга" v-model="v$.form.visitorName.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorName.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
+              <v-alert
+                  prominent
+                  type="error"
+                  variant="outlined"
+              >
+                {{error.$message}}
+              </v-alert>
             </div>
 
             <h5>Выберите количество гостей*</h5>
@@ -30,19 +36,37 @@
             <h5>Выберите дату посещения*</h5>
             <input type="date" class="text-input" placeholder="Например: 25.12.2022"  v-model="v$.form.visitorDate.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorDate.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
+              <v-alert
+                  prominent
+                  type="error"
+                  variant="outlined"
+              >
+                {{error.$message}}
+              </v-alert>
             </div>
 
             <h5>Напишите примерное время посещения*</h5>
             <input type="time" class="text-input" placeholder="Например: 16:00"  v-model="v$.form.visitorTime.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorTime.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
+              <v-alert
+                  prominent
+                  type="error"
+                  variant="outlined"
+              >
+                {{error.$message}}
+              </v-alert>
             </div>
 
             <h5>Введите Ваш номер телефона*</h5>
             <input type="text" inputmode="tel" class="text-input phone" placeholder="+7(999)999-99-99"  v-model="v$.form.visitorPhone.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorPhone.$errors" :key="index">
-              <div class="error-msg">{{ error.$message }}</div>
+              <v-alert
+                  prominent
+                  type="error"
+                  variant="outlined"
+              >
+                {{error.$message}}
+              </v-alert>
             </div>
 
             <button class="btn rent-button">
