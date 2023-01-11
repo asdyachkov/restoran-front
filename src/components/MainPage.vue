@@ -11,11 +11,6 @@
                 <span>Забронировать стол</span>
               </div>
             </a>
-            <a href="/about">
-              <div class="btn about-button">
-                <span>Подробнее о ресторане</span>
-              </div>
-            </a>
           </div>
         </div>
       </div>

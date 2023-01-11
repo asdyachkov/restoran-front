@@ -40,7 +40,7 @@
             </div>
 
             <h5>Введите Ваш номер телефона*</h5>
-            <input type="text" class="text-input phone" placeholder="+7(999)999-99-99"  v-model="v$.form.visitorPhone.$model">
+            <input type="text" inputmode="tel" class="text-input phone" placeholder="+7(999)999-99-99"  v-model="v$.form.visitorPhone.$model">
             <div class="input-errors" v-for="(error, index) of v$.form.visitorPhone.$errors" :key="index">
               <div class="error-msg">{{ error.$message }}</div>
             </div>
