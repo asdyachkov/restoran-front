@@ -59,7 +59,7 @@ export default {
   name: "MyDefault",
   data() {
     return {
-      logged_in: false
+      logged_in: true
     }
   },
   methods: {

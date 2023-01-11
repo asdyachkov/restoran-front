@@ -80,6 +80,9 @@ export default {
 </script>
 
 <style scoped>
+.row_name:hover{
+  color: #ab8e6c;
+}
 .v-table{
   margin: 20px auto;
 }
