@@ -30,7 +30,17 @@
               мы точно сможем забить то, что вам хочется, необычные новинки или старую добрую классику.</p>
           </div>
           <div class="col-item">
-            <img src="../../public/hookah.jpg" alt="hookah">
+            <v-carousel cycle hide-delimiters :show-arrows="false" height="300">
+              <v-carousel-item
+                  src="https://avatars.mds.yandex.net/i?id=485d8c3f1d15bcd969d4c2055821c0d18bfb4fe2-7544543-images-thumbs&n=13"
+                  cover
+              ></v-carousel-item>
+
+              <v-carousel-item
+                  src="https://avatars.mds.yandex.net/i?id=7e35bb1dbb5f7c164cb2d611b4ce38a580a3f069-8244093-images-thumbs&n=13"
+                  cover
+              ></v-carousel-item>
+            </v-carousel>
           </div>
         </div>
 

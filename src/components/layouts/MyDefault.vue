@@ -9,6 +9,19 @@
               <li class="nav-item"><router-link to="/" exact class="nav-link">Home</router-link></li>
               <li class="nav-item"><router-link to="/menu" class="nav-link">Menu</router-link></li>
               <li class="nav-item"><router-link to="/rent_a_table" class="nav-link">Rent a table</router-link></li>
+              <li class="nav-item" style="max-width: 500px">
+                <v-select
+                          label="Файлы"
+                          :items="items"
+                          variant="underlined"
+                >
+                  <template v-slot:selection="{ item }">
+                    <v-chip>
+                      {{this.value[this.items.indexOf(item.title)]}}
+                    </v-chip>
+                  </template>
+                </v-select>
+              </li>
             </ul>
 
             <div style="margin-left: auto; display: flex; align-items: center; justify-content: center">
@@ -58,7 +71,9 @@ export default {
   name: "MyDefault",
   data() {
     return {
-      logged_in: true
+      logged_in: true,
+      items: ['JSON', 'Git'],
+      value: ['https://drive.google.com/file/d/1fQPm7nI7nAfIDXlEL9hBGAQx7mm9mUxp/view?usp=sharing', 'https://github.com/godofprog/kursach_front']
     }
   },
   methods: {
@@ -68,5 +83,6 @@ export default {
 </script>
 
 <style>
+
 @import "@/assets/css/MyDefault.css";
 </style>

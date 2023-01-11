@@ -1,10 +1,9 @@
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import YmapPlugin from 'vue-yandex-maps'
 import store from './vuex/store'
-
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
