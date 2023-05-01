@@ -1,1 +1,1 @@
-deployd to http://std-2062.ist.mospolytech.ru/
+<h3>Фронтенд booking_a_table репозитория, написанный на Vue.js</h3>
